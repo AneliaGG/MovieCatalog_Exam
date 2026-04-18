@@ -76,6 +76,7 @@ namespace MovieCatalog_Exam
             var data = JsonSerializer.Deserialize<ApiResponseDTO>(response.Content!);
 
             Assert.That(data, Is.Not.Null);
+            Assert.That(data.Movie, Is.Not.Null);
             Assert.That(data.Movie.Id, Is.Not.Null.And.Not.Empty, "Movie ID should be returned");
             Assert.That(data.Msg, Is.EqualTo("Movie created successfully!"));
 
